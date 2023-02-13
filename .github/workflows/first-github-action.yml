@@ -1,0 +1,23 @@
+# This is a basic workflow to help you get started with Actions
+name: First Workflow # it is optional to give name to your workflow
+
+# Controls when the workflow will run
+# Allows you to run this workflow manually from the Actions tab
+on: workflow_dispatch
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  first-job: # it is a name given to your job and you change the name of the job
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Runs a single command using the runners shell
+      - name: Run a one-line script  # it is a name given to your step 1 and you change the name of the step
+        run: echo "Hello, world!"
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script # it is a name given to your step 2 and you change the name of the step
+        run:
+          echo "Add other actions to build,"
+          echo "test, and deploy your project."
