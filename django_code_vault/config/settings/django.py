@@ -35,6 +35,7 @@ DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = "accounts.CustomUser"
 
 # Application definition
 
@@ -45,6 +46,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+]
+
+#your apps
+INSTALLED_APPS+=[
+    "accounts"
 ]
 
 MIDDLEWARE = [
