@@ -8,8 +8,11 @@ def test_should_create_user(user_details):
     user = CustomUser.objects.create_user(
         email=user_details["email"], name=user_details["name"]
     )
-    assert user.email == "test@gmail.com"
-    assert user.name == "test user"
+    assert user.email == user_details["email"]
+    assert user.name == user_details["name"]
+    assert str(user) == user_details["email"]
+    assert user.get_full_name() == user_details["name"]
+    assert user.get_short_name() == user_details["name"].split()[0]
 
 
 @pytest.mark.django_db
