@@ -2,6 +2,7 @@ import pytest
 from accounts.models import CustomUser
 
 
+
 @pytest.mark.django_db
 def test_should_create_user(user_details):
     user = CustomUser.objects.create_user(
