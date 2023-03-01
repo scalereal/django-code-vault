@@ -1,5 +1,9 @@
 # django-code-vault
 
+## Refer this blog
+```
+https://medium.com/@meet_patel/pytest-a-comprehensive-guide-to-automated-testing-part-4-406e0a341216
+```
 ## Getting started:
 ### Clone this repository:
 ```
@@ -30,4 +34,14 @@ In DATABASE_URL, replace your_database_user and your_database_password with your
 ### Start the server:
 ``` 
 python manage.py runserver
+```
+
+### Run testcase using coverage command:
+``` 
+coverage run -m pytest
+```
+
+### Get coverage report:
+``` 
+coverage html
 ```
