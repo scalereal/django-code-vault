@@ -12,7 +12,7 @@ def test_should_create_user(user_details):
 
 
 @pytest.mark.django_db
-def test_should_fail_to_create_user_with_email(user_details):
+def test_should_fail_to_create_user_without_email(user_details):
     try:
         CustomUser.objects.create_user(email="", name=user_details["name"])
     except ValueError as ve:
@@ -21,7 +21,7 @@ def test_should_fail_to_create_user_with_email(user_details):
 
 
 @pytest.mark.django_db
-def test_should_fail_to_create_user_with_name(user_details):
+def test_should_fail_to_create_user_without_name(user_details):
     try:
         CustomUser.objects.create_user(email=user_details["email"], name="")
     except ValueError as ve:
@@ -38,7 +38,7 @@ def test_should_create_super_user(user_details):
     assert user.name == "test user"
 
 @pytest.mark.django_db
-def test_should_fail_to_create_super_user_with_email(user_details):
+def test_should_fail_to_create_super_user_without_email(user_details):
     try:
         CustomUser.objects.create_user(email="", name=user_details["name"])
     except ValueError as ve:
@@ -46,7 +46,7 @@ def test_should_fail_to_create_super_user_with_email(user_details):
         assert type(ve) == ValueError
 
 @pytest.mark.django_db
-def test_should_fail_to_create_super_user_with_name(user_details):
+def test_should_fail_to_create_super_user_without_name(user_details):
     try:
         CustomUser.objects.create_user(email=user_details["email"],name="")
     except ValueError as ve:
@@ -54,7 +54,7 @@ def test_should_fail_to_create_super_user_with_name(user_details):
         assert type(ve) == ValueError
 #
 @pytest.mark.django_db
-def test_should_fail_to_create_super_user_with_false_is_staff_value(user_details):
+def test_should_fail_to_create_super_user_with_is_staff_equals_to_false(user_details):
     try:
         CustomUser.objects.create_superuser(
             email=user_details["email"], name=user_details["name"], is_staff=False
@@ -64,7 +64,7 @@ def test_should_fail_to_create_super_user_with_false_is_staff_value(user_details
         assert type(ve) == ValueError
 
 @pytest.mark.django_db
-def test_should_fail_to_create_super_user_with_false_is_superuser_value(user_details):
+def test_should_fail_to_create_super_user_with_is_superuser_equals_to_false(user_details):
     try:
         CustomUser.objects.create_superuser(
             email=user_details["email"], name=user_details["name"], is_superuser=False
