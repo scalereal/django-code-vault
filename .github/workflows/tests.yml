@@ -3,7 +3,7 @@ name: Django Tests
 on:
   push:
     branches:
-      -main
+      -MP/setup-github-action
   pull_request:
     branches:
       -main
@@ -24,10 +24,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install --user pipenv
         pipenv install
+    - name: Test with pytest
+      run: |
+        pipenv run pytest -vv
     - name: Coverage report
       run: |
         pipenv run coverage run -m pytest
         pipenv run coverage report
-    - name: Test with pytest
-      run: |
-        pipenv run pytest -vv
