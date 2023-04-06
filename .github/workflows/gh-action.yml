@@ -1,14 +1,13 @@
-name: Django Github Action
-on: workflow_dispatch
-#on:
-#  push:
-#    branches:
-#      - main
-#      - MP/django-github-action
-#  pull_request:
-#    types: [ review_requested ]
-#    branches:
-#      - main
+name: Django Tests
+on:
+  push:
+    branches:
+      - main
+      - MP/django-github-action
+  pull_request:
+    types: [ review_requested ]
+    branches:
+      - main
 
 jobs:
   build:
