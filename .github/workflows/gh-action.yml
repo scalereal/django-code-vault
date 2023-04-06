@@ -50,3 +50,7 @@ jobs:
       - name: Test Coverage report
         run: |
           pipenv run coverage report
+
+      - name: Echo value of postgres
+        run: |
+          echo ${{ job.services.postgres.ports[5432] }}
