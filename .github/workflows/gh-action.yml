@@ -41,8 +41,8 @@ jobs:
 
       - name: Executing testcases
         env:
-            SECRET_KEY: 55b670aa942e747e4aaa275128207dc0d5d98c7f4ff09ea87a42c02fffcd71bfd3f87d78a27fac3a4dd1d7ae7d7217658a22
-            DEBUG : True
+            SECRET_KEY: ${{ secrets.SECRET_KEY }}
+            DEBUG : ${{ secrets.DEBUG }}
             DATABASE_URL: psql://postgres:postgres@localhost:${{ job.services.postgres.ports[5432] }}/db_test
         run: |
           pipenv run coverage run -m pytest -vv
