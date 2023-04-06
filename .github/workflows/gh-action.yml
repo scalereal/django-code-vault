@@ -50,3 +50,9 @@ jobs:
       - name: Test Coverage report
         run: |
           pipenv run coverage report
+
+      - name: Echo value
+        run: |
+          echo ${{ secrets.POSTGRES_USER }}
+          echo ${{ secrets.POSTGRES_PASSWORD }}
+          echo ${{ secrets.POSTGRES_DB }}
