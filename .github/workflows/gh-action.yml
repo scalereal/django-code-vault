@@ -39,6 +39,12 @@ jobs:
         run: |
           pipenv run flake8 .
 
+      - name: Echo value
+        run: |
+          echo ${{ secrets.POSTGRES_USER }}
+          echo ${{ secrets.POSTGRES_PASSWORD }}
+          echo ${{ secrets.POSTGRES_DB }}
+
       - name: Executing testcases
         env:
             SECRET_KEY: ${{ secrets.SECRET_KEY }}
@@ -50,9 +56,3 @@ jobs:
       - name: Test Coverage report
         run: |
           pipenv run coverage report
-
-      - name: Echo value
-        run: |
-          echo ${{ secrets.POSTGRES_USER }}
-          echo ${{ secrets.POSTGRES_PASSWORD }}
-          echo ${{ secrets.POSTGRES_DB }}
