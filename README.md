@@ -2,7 +2,7 @@
 
 ## Refer this blog
 ```
-https://medium.com/@meet_patel/pytest-a-comprehensive-guide-to-automated-testing-part-4-406e0a341216
+https://medium.com/@meet_patel/6285888c31d7
 ```
 ## Getting started:
 ### Clone this repository:
