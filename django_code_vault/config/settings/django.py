@@ -48,10 +48,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
-#your apps
-INSTALLED_APPS+=[
-    "accounts"
-]
+# your apps
+INSTALLED_APPS += ["accounts"]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -87,7 +85,7 @@ WSGI_APPLICATION = "django_code_vault.config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {"default":env.db()}
+DATABASES = {"default": env.db()}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
